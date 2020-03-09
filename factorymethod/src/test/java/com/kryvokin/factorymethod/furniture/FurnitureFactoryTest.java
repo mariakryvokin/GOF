@@ -15,10 +15,16 @@ class FurnitureFactoryTest {
     private Demo demo;
 
     @Test
-    void getName() {
+    void getNameStaticFactoryMethodApproach() {
         Optional<FurnitureFactory> sofaCreator = demo.getFactory("SofaCreator");
         if (sofaCreator.isPresent()) {
             System.out.println(sofaCreator.get().getName());
         }
+    }
+
+    @Test
+    public void getName(){
+        FurnitureFactory furnitureFactory = new ChairCreator();
+        System.out.println(furnitureFactory.getName());
     }
 }
