@@ -8,9 +8,9 @@ public class Main {
         Developer developer = new Developer();
         Manager manager = new Manager();
 
-        QALead qaLead = new QALead();
+        QaLead qaLead = new QaLead();
 
-        QAArchitector compositeQA = new QAArchitector();
+        CompositeQaArchitector compositeQA = new CompositeQaArchitector();
         compositeQA.addComponent(qaLead);
 
         CompositeDirector director = new CompositeDirector();

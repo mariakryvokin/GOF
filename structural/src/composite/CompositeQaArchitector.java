@@ -3,7 +3,7 @@ package composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QAArchitector implements Employee, Composite {
+public class CompositeQaArchitector implements Employee, Composite {
 
     private List<Employee> employees = new ArrayList<>();
 
