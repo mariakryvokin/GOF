@@ -4,32 +4,27 @@ package command;
 public class TextFile {
 
     private String context;
-    private String backup;
 
     public TextFile(String context) {
         this.context = context;
     }
 
-    public String backup() {
-        backup = context;
-        return backup;
-    }
-
     public boolean addText(String textToAddAdd) {
-        backup();
         context += textToAddAdd;
         return true;
     }
 
-    public String undo() {
-        context = backup;
-        return backup;
+    public boolean cutSelectedText(String selectedText){
+        context = context.replaceAll(selectedText, "");
+        return true;
     }
-
 
     public String getContext() {
         return context;
     }
 
+    public void setContext(String context) {
+        this.context = context;
+    }
 
 }

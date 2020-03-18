@@ -1,17 +1,19 @@
 package command;
 
-public class AddTextCommand implements Command {
+public class AddTextCommand extends Command {
 
-    private TextFile textFile;
     private String textToAdd;
 
-    public AddTextCommand(TextFile textFile, String textToAdd) {
-        this.textFile = textFile;
+    public AddTextCommand(TextFile textFile, String textToAdd, boolean isAddableToHistory) {
+        super(textFile,isAddableToHistory);
         this.textToAdd = textToAdd;
     }
 
     @Override
     public boolean execute() {
+        if(isAddableToHistory){
+            doBackup();
+        }
         return textFile.addText(textToAdd);
     }
 
