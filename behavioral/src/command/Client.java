@@ -18,8 +18,16 @@ public class Client {
         executor.setCommand(cutText);
         executor.executeCommand();
         System.out.println(textFile.getContext());
-        System.out.println(executor.undo());
-        System.out.println(executor.undo());
+        System.out.println("1 undo:             "+executor.undo() + " " + textFile.getContext());
+        System.out.println("2 undo:             "+executor.undo() + " " + textFile.getContext());
+        System.out.println("3 undo:             "+executor.undo() + " " + textFile.getContext());
+
+        Command addAnotherText = new AddTextCommand(textFile, " another text", true);
+        executor.setCommand(addAnotherText);
+        executor.executeCommand();
+        System.out.println(textFile.getContext());
+        executor.restore();
+        System.out.println(textFile.getContext());
 
     }
 

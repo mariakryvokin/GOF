@@ -13,6 +13,7 @@ public class AddTextCommand extends Command {
     public boolean execute() {
         if(isAddableToHistory){
             doBackup();
+            doSnapshotBackup();
         }
         return textFile.addText(textToAdd);
     }

@@ -1,5 +1,7 @@
 package command;
 
+import javax.swing.text.html.Option;
+import java.util.Optional;
 import java.util.Stack;
 
 public class CommandHistory {
@@ -10,7 +12,10 @@ public class CommandHistory {
        return history.push(command);
     }
 
-    public Command getLastExecuted(){
-        return history.pop();
+    public Optional<Command> getLastExecuted(){
+        if ( ! history.isEmpty()){
+            return Optional.of(history.pop());
+        }
+        return Optional.empty();
     }
 }

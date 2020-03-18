@@ -1,11 +1,14 @@
 package command;
 
+import command.snapshot.Snapshot;
+
 //command
 public abstract class Command {
 
     protected TextFile textFile;
     protected boolean isAddableToHistory;
     protected String backup;
+    protected Snapshot backupSnapshot;
 
     public Command(TextFile textFile, boolean isAddableToHistory) {
         this.textFile = textFile;
@@ -14,13 +17,24 @@ public abstract class Command {
 
     abstract boolean execute();
 
-    protected String undo() {
+    protected TextFile undo() {
         textFile.setContext(backup);
-        return backup;
+        return textFile;
     }
 
     protected void doBackup(){
         backup = textFile.getContext();
+    }
+
+    protected void doSnapshotBackup(){
+        backupSnapshot = textFile.createSnapshot();
+    }
+
+    protected TextFile restore(){
+       if(backupSnapshot != null){
+         textFile.setContext(backupSnapshot.restore().getContext());
+       }
+       return textFile;
     }
 
     public boolean isAddableToHistory() {

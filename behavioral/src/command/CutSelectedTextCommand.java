@@ -13,6 +13,7 @@ public class CutSelectedTextCommand extends Command {
     boolean execute() {
         if(isAddableToHistory){
             doBackup();
+            doSnapshotBackup();
         }
         return textFile.cutSelectedText(selectedText);
     }

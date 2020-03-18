@@ -1,5 +1,7 @@
 package command;
 
+import command.snapshot.Snapshot;
+
 //reciver
 public class TextFile {
 
@@ -25,6 +27,10 @@ public class TextFile {
 
     public void setContext(String context) {
         this.context = context;
+    }
+
+    public Snapshot createSnapshot(){
+        return new Snapshot(this);
     }
 
 }

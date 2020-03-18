@@ -1,5 +1,9 @@
 package command;
 
+import command.snapshot.Snapshot;
+
+import java.util.Optional;
+
 //invoker
 public class Executor {
 
@@ -22,8 +26,22 @@ public class Executor {
         }
     }
 
-    public String undo(){
-        return commandHistory.getLastExecuted().undo();
+    public boolean undo(){
+        Optional<Command> command = commandHistory.getLastExecuted();
+        if(command.isPresent()){
+            command.get().undo();
+            return true;
+        }
+        return false;
+    }
+
+    public boolean restore(){
+        Optional<Command> command = commandHistory.getLastExecuted();
+        if(command.isPresent()){
+            command.get().restore();
+            return true;
+        }
+        return false;
     }
 
     public void setCommand(Command command) {
