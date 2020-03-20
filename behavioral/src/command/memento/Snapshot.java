@@ -1,4 +1,4 @@
-package command.snapshot;
+package command.memento;
 
 import command.TextFile;
 

@@ -1,7 +1,5 @@
 package command;
 
-import command.snapshot.Snapshot;
-
 import java.util.Optional;
 
 //invoker

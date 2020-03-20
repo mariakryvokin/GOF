@@ -1,6 +1,6 @@
 package command;
 
-import command.snapshot.Snapshot;
+import command.memento.Snapshot;
 
 //reciver
 public class TextFile {

@@ -1,6 +1,6 @@
 package command;
 
-import command.snapshot.Snapshot;
+import command.memento.Snapshot;
 
 //command
 public abstract class Command {
