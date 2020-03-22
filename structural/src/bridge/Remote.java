@@ -1,5 +1,6 @@
 package bridge;
 
+//abstraction
 public class Remote {
 
     private Device device;
@@ -8,11 +9,7 @@ public class Remote {
         this.device = device;
     }
 
-    public String start(){
-        return device.start();
-    }
-
-    public String stop(){
-        return device.stop();
+    public String turnOn(){
+        return device.turnOn();
     }
 }

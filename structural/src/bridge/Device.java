@@ -1,7 +1,7 @@
 package bridge;
 
+//realisation
 public interface Device {
 
-    String start();
-    String stop();
+    String turnOn();
 }
