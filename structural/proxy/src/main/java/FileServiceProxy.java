@@ -5,6 +5,10 @@ public class FileServiceProxy implements FileService {
 
     private FileServiceImpl fileService;
 
+    public FileServiceProxy(FileServiceImpl fileService) {
+        this.fileService = fileService;
+    }
+
     @Override
     public String wrightToFile(File file, String text) throws IOException {
         if(haveForbidenWords(text)){

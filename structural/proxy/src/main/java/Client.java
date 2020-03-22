@@ -4,7 +4,7 @@ import java.io.IOException;
 public class Client {
 
     public static void main(String[] args) throws IOException {
-        FileService fileService = new FileServiceProxy();
+        FileService fileService = new FileServiceProxy(new FileServiceImpl());
         System.out.println(fileService.wrightToFile(new File("C:\\TMP\\lol.txt"),"fuck"));
     }
 }
