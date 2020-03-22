@@ -1,5 +1,7 @@
 package composite;
 
+import composite.behavioral.visitor.Visitor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +29,11 @@ public class CompositeDirector implements Employee, Composite {
     public String toHire() {
         employees.forEach(employee -> System.out.println(employee.toHire()));
         return "Composite director is hired";
+    }
+
+    @Override
+    public void accept(Visitor hrVisitor) {
+
     }
 
 
