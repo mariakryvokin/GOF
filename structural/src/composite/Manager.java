@@ -21,11 +21,11 @@ public class Manager implements Employee{
 
     @Override
     public boolean addComponent(Employee employee) {
-        return false;
+        throw new RuntimeException("unsupported operation");
     }
 
     @Override
     public boolean removeComponent(Employee employee) {
-        return false;
+        throw new RuntimeException("unsupported operation");
     }
 }
