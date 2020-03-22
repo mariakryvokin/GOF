@@ -1,6 +1,7 @@
 package composite;
 
 import composite.behavioral.visitor.Visitor;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,16 @@ public class Developer implements Employee{
     @Override
     public void accept(Visitor hrVisitor) {
         hrVisitor.suggestWork(this);
+    }
+
+    @Override
+    public boolean addComponent(Employee employee) {
+        return false;
+    }
+
+    @Override
+    public boolean removeComponent(Employee employee) {
+        return false;
     }
 
     public List<String> getKnownTechnology() {

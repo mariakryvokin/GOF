@@ -26,6 +26,16 @@ public class QaLead implements Employee{
         hrVisitor.promote(this);
     }
 
+    @Override
+    public boolean addComponent(Employee employee) {
+        return false;
+    }
+
+    @Override
+    public boolean removeComponent(Employee employee) {
+        return false;
+    }
+
     public int getYearsOfExperience() {
         return yearsOfExperience;
     }

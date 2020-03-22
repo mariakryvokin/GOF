@@ -5,7 +5,7 @@ import composite.behavioral.visitor.Visitor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompositeDirector implements Employee, Composite {
+public class CompositeDirector implements Employee {
 
     private List<Employee> employees = new ArrayList<>();
 

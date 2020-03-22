@@ -18,4 +18,14 @@ public class Manager implements Employee{
     public void accept(Visitor hrVisitor) {
 
     }
+
+    @Override
+    public boolean addComponent(Employee employee) {
+        return false;
+    }
+
+    @Override
+    public boolean removeComponent(Employee employee) {
+        return false;
+    }
 }

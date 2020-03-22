@@ -5,7 +5,7 @@ import composite.behavioral.visitor.Visitor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompositeQaArchitector implements Employee, Composite {
+public class CompositeQaArchitector implements Employee {
 
     private List<Employee> employees = new ArrayList<>();
 
