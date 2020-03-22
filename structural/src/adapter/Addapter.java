@@ -1,6 +1,6 @@
 package adapter;
 
-public class Addapter implements WindowService  {
+public class Addapter extends WindowService {
 
     private ThirdPartyLibraryDoorService thirdPartyLibraryDoorService;
 
@@ -9,7 +9,12 @@ public class Addapter implements WindowService  {
     }
 
     @Override
-    public boolean seeThrough() {
-        return thirdPartyLibraryDoorService.canLock();
+    public boolean seeThrough(Window window) {
+        Door door = convertData(window);
+        return thirdPartyLibraryDoorService.hasPeephole(door);
+    }
+
+    private Door convertData(Window window) {
+        return new Door(window.isTinted());
     }
 }

@@ -1,6 +1,8 @@
 package adapter;
 
-public interface WindowService {
+public class WindowService {
 
-    boolean seeThrough();
+    boolean seeThrough(Window window){
+        return ! window.isTinted();
+    }
 }
