@@ -2,7 +2,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-//in real-world cloneable object should be costly. Fo instance created after call to db
 public class Employee implements Cloneable {
 
     private int age;
@@ -41,7 +40,6 @@ public class Employee implements Cloneable {
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        super.clone();
         List<String> certificateCopy = this.getCertificats().stream().collect(Collectors.toList());
         return new Employee(this.getAge(),this.getName(), certificateCopy);
     }
