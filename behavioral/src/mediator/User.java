@@ -1,5 +1,7 @@
 package mediator;
 
+import java.util.List;
+
 public class User {
 
     protected Integer id;
@@ -11,8 +13,8 @@ public class User {
         this.mediator = mediator;
     }
 
-    public void sentMessage(User user, String message){
-        mediator.sendEmail(user, message);
+    public void sentMessage(List<Integer> userId, String message){
+        mediator.sendMessage(userId, message);
     }
     public void receiveMessage(String message){
         System.out.println("User with id: " + getId() + " recieved message: " + message);

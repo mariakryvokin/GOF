@@ -1,7 +1,9 @@
 package mediator;
 
+import java.util.List;
+
 public interface Chat {
 
-    void sendEmail(User user, String messsage);
+    void sendMessage(List<Integer> userIds, String message);
     void addUser(User user);
 }

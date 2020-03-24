@@ -1,5 +1,7 @@
 package mediator;
 
+import java.util.Collections;
+
 public class Client {
 
     public static void main(String[] args) {
@@ -9,6 +11,6 @@ public class Client {
         chat.addUser(firstUser);
         chat.addUser(secondUser);
 
-        firstUser.sentMessage(secondUser, "hi");
+        firstUser.sentMessage(Collections.singletonList(secondUser.getId()), "hi");
     }
 }
