@@ -21,12 +21,7 @@ public class Client {
         System.out.println("1 undo:             "+executor.undo() + " " + textFile.getContext());
         System.out.println("2 undo:             "+executor.undo() + " " + textFile.getContext());
         System.out.println("3 undo:             "+executor.undo() + " " + textFile.getContext());
-
-        Command addAnotherText = new AddTextCommand(textFile, " another text", true);
-        executor.setCommand(addAnotherText);
-        executor.executeCommand();
-        System.out.println(textFile.getContext());
-        executor.restore();
+        executor.restore(executor.getMementoHistory().pop());
         System.out.println(textFile.getContext());
 
     }

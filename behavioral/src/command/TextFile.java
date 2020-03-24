@@ -1,8 +1,9 @@
 package command;
 
-import command.memento.Snapshot;
+import command.memento.Memento;
 
 //reciver
+// originator
 public class TextFile {
 
     private String context;
@@ -29,8 +30,14 @@ public class TextFile {
         this.context = context;
     }
 
-    public Snapshot createSnapshot(){
-        return new Snapshot(this);
+    //memento part
+
+    public Memento save(){
+        return new Memento(this.getContext());
+    }
+
+    public void restore(Memento memento){
+        this.setContext(memento.getContext());
     }
 
 }
