@@ -5,7 +5,7 @@ import java.util.List;
 
 public class NewsPublisher implements Publisher{
 
-
+    private List<News> news = new ArrayList<>();
     private List<Observer> observers = new ArrayList<>();
 
     @Override
@@ -19,7 +19,22 @@ public class NewsPublisher implements Publisher{
     }
 
     @Override
-    public void notify(Message message) {
-        observers.forEach(observer -> observer.notify(message));
+    public void addNews(List<News> message) {
+        news.addAll(message);
+        notifySubscribers();
+    }
+
+    @Override
+    public void notifySubscribers() {
+        observers.forEach(observer -> observer.update(this));
+    }
+
+    @Override
+    public List<News> getLatestNews(int amount) {
+        if(amount > news.size()){
+            return news;
+        }else {
+            return news.subList(news.size()-amount,news.size());
+        }
     }
 }

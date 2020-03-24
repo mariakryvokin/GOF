@@ -1,5 +1,8 @@
 package observer;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -8,6 +11,8 @@ public class Main {
         Publisher publisher = new NewsPublisher();
 
         publisher.subscribe(observer);
-        publisher.notify(new Message(" hi!"));
+        publisher.addNews(Arrays.asList(new News("First News"),
+                new News("Second News")));
+        publisher.addNews(Collections.singletonList(new News("Third News")));
     }
 }

@@ -2,7 +2,7 @@ package observer;
 
 public class Subscriber implements Observer {
     @Override
-    public void notify(Message message) {
-        System.out.println("was notified with message: " + message);
+    public void update(Publisher publisher) {
+        System.out.println("was notified with message: " + publisher.getLatestNews(2));
     }
 }

@@ -1,15 +1,15 @@
 package observer;
 
-public class Message {
+public class News {
     private String context;
 
-    public Message(String context) {
+    public News(String context) {
         this.context = context;
     }
 
     @Override
     public String toString() {
-        return "Message{" +
+        return "News{" +
                 "context='" + context + '\'' +
                 '}';
     }
