@@ -1,5 +1,7 @@
 package bridge;
 
+import java.net.URI;
+
 //abstraction
 public class Remote {
 
@@ -11,5 +13,9 @@ public class Remote {
 
     public String turnOn(){
         return device.turnOn();
+    }
+
+    public void setDevice(Device device) {
+        this.device = device;
     }
 }
