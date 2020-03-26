@@ -1,7 +1,9 @@
 public class Singleton {
 
     private static volatile Singleton instance;
-    private Singleton(){}
+    private Singleton(){
+         throw new RuntimeException("");
+    }
 
     public static Singleton getInstance(){
         if (instance == null){
