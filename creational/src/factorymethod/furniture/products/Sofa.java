@@ -1,4 +1,4 @@
-package com.kryvokin.factorymethod.furniture.products;
+package factorymethod.furniture.products;
 
 public class Sofa implements FurnitureProduct {
     @Override

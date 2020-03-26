@@ -39,7 +39,6 @@
     </dependencies>
 
     <modules>
-        <module>factorymethod</module>
     </modules>
 
     <build>
